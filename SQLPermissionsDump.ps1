@@ -1,5 +1,5 @@
 #I copied lots of this code, and added stuff to my liking.
-#This basically dumps all the login users and their permissions on a SQL server.
+#This basically dumps all the login users and their permissions from a SQL server.
 #Run this on the server hosting the SQL. Remember to fulfill the SQL instance/instance+name(server name when you connect via SSMS).
 
 Function GetDBUserInfo($Dbase){
