@@ -2,7 +2,7 @@
 Import-Module ImportExcel
 
 # Specify the starting string for group names
-$groupNamePrefix = "INSERTGROUPNAME/PREFIXFORGROUP"
+$groupNamePrefix = "INSERTGROUPNAME/PREFIXFORGROUPS"
 
 # Get groups that start with the specified prefix
 $groups = Get-ADGroup -Filter "Name -like '$groupNamePrefix*'" -Properties *
