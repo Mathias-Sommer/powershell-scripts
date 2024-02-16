@@ -1,3 +1,5 @@
+#This script tells you all the users who is under a specific manager
+
 $managerUsername = read-host "Indtast Manager initialer"
 $managerDN = (Get-ADUser -Filter {SamAccountName -eq $managerUsername}-ErrorAction SilentlyContinue ).DistinguishedName 
 $managerFullName = get-aduser -Filter "SamAccountName -eq '$managerUsername'" | Select-Object name, samaccountname
