@@ -1,3 +1,6 @@
+#This script lets you know all the users for specific group(s) in AD.
+#You can add the full group name or the prefix ex. 'test' and it will look for all groups containing 'test'.
+
 #importexcel module has to be installed for this to work.
 Import-Module ImportExcel
 
