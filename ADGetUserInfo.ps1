@@ -1,3 +1,6 @@
+#This gets useful information of a user.
+#**Note if your domain controllers haven't synced, then the date/time can way be off. Please keep that in mind.
+
 $user = Get-ADUser -Filter {SamAccountName -eq "ENTER_SAMACCOUNTNAME"} -Properties lastLogon, WhenCreated, PwdLastSet, Manager | Select-Object Name, SamAccountName, @{
     Name="LastLogon"; 
     Expression={[DateTime]::FromFileTime($_.lastLogon)}
