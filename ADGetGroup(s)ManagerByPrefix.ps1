@@ -17,8 +17,8 @@ foreach ($g in $Groups) {
 
     $Info = New-Object psObject 
     $Info | Add-Member -MemberType NoteProperty -Name "GroupName" -Value $g.Name
-    $Info | Add-Member -MemberType NoteProperty -Name "Description" -Value $g.description
     $Info | Add-Member -MemberType NoteProperty -Name "ManagedBy" -Value $managerName
+    $Info | Add-Member -MemberType NoteProperty -Name "Description" -Value $g.description    
    
     $GroupMembers += $Info
     $info
