@@ -1,7 +1,8 @@
 #This gets useful information of a user.
 #**Note if your domain controllers haven't synced, then the date/time can way be off. Please keep that in mind.
+$samAccountName = read-host "Enter SamAccountName" 
 
-$user = Get-ADUser -Filter {SamAccountName -eq "hans"} -Properties lastLogon, WhenCreated, PwdLastSet, Manager | Select-Object Name, SamAccountName, @{
+$user = Get-ADUser -Filter {SamAccountName -eq $samAccountName} -Properties lastLogon, WhenCreated, PwdLastSet, Manager | Select-Object Name, SamAccountName, @{
     Name="LastLogon"; 
     Expression={[DateTime]::FromFileTime($_.lastLogon)}
 }, @{
@@ -28,7 +29,7 @@ if($user.SamAccountName -eq $null){
         }
 
 if($user.Manager -eq $null){
-    Write-host "Manager        : Never" -ForegroundColor gray
+    Write-host "Manager        : N/A" -ForegroundColor gray
     }
     else{
         $manager = Get-ADUser $user.Manager -Properties Name, EmailAddress, TelephoneNumber
