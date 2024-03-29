@@ -5,7 +5,7 @@ $GroupMembers = @()
 #Put group prefix here. This takes every group that has "IT" in it.
 $groupNamePrefix = "IT" #replace with whatever 
 
-$Groups = Get-ADGroup -Filter "Name -like '$groupNamePrefix*'" -Properties *
+$Groups = Get-ADGroup -Filter "Name -like '*$groupNamePrefix*'" -Properties *
 
 foreach ($g in $Groups) {
     if ($g.ManagedBy -eq $null) {
